@@ -27,7 +27,7 @@ echo "admin";
 <li>Cerrar sesion</li>
 <section class="examen">
 		<h1>EXAMEN</h1>
-		<button class="comienzaexamen">comenzar examen</button>
+		
 	</section>
 
 
