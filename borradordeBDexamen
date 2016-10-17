@@ -1,0 +1,65 @@
+	creacion de tabla preguntas
+
+	create table preguntas(id integer auto_increment primary key, preguntavarchar(50));
+	inserccion de preguntas;
+
+			insert into preguntas(pregunta) values('pregunta uno');
+
+			insert into preguntas(pregunta) values('pregunta dos');
+
+
+	creacion de tabla respuestas
+
+	create table respuestas(id integer auto_increment primary key, id_pregunta integer, opcA varchar(50),opcB varchar(50),opcC varchar(50),opcD varchar(50),correcta varchar(1));
+
+	inserccion de respuestas
+
+
+			insert into respuestas(id_pregunta,opcA,opcB,opcC,opcD,correcta) values(1,'respuesta A','respuesta B','respuesta C','respuesta D','A');
+
+			insert into respuestas(id_pregunta,opcA,opcB,opcC,opcD,correcta) values(2,'respuesta A','respuesta B','respuesta C','respuesta D','B');
+
+			insert into respuestas(id_pregunta,opcA,opcB,opcC,opcD,correcta) values(3,'respuesta A','respuesta B','respuesta C','respuesta D','C');
+
+			insert into respuestas(id_pregunta,opcA,opcB,opcC,opcD,correcta) values(4,'respuesta A','respuesta B','respuesta C','respuesta D','D');
+
+			insert into respuestas(id_pregunta,opcA,opcB,opcC,opcD,correcta) values(7,'respuesta A','respuesta B','respuesta C','respuesta D','b');
+
+			insert into respuestas(id_pregunta,opcA,opcB,opcC,opcD,correcta) values(8,'respuesta A','respuesta B','respuesta C','respuesta D','d');
+
+			insert into respuestas(id_pregunta,opcA,opcB,opcC,opcD,correcta) values(9,'respuesta A','respuesta B','respuesta C','respuesta D','a');
+
+			insert into respuestas(id_pregunta,opcA,opcB,opcC,opcD,correcta) values(10,'respuesta A','respuesta B','respuesta C','respuesta D','c');
+
+BUSQUEDA
+
+			select * from preguntas,respuestas where respuestas.id_pregunta=preguntas.id;
+
+busqueda de solo id de preguntas con sus correctas
+			select preguntas.id,respuestas.correcta from respuestas,preguntas where preguntas.id=respuestas.id_pregunta;
+busqueda de correcta de una pregunta con su id
+			select id_pregunta,correcta from respuestas where id_pregunta=$id_pregunta;
+
+creacion de tabla respuestas usuario
+
+	create table respuestas_user(id integer auto_increment primary key, id_pregunta integer, respuesta varchar(1));
+
+edite campo de correctas de tabala respuestas
+	update respuestas set correcta="a" where id=1;
+
+
+CREACION DE TABLA ALUMNOS
+ 	create table alumnos(id integer auto_increment primary key, nombre varchar(50),password varchar(8));
+
+CREACION TABLA CALIFICACION
+	create table calificaciones(id integer auto_increment primary key, id_alumno integer, id_pregunta integer, calificacion integer);
+CREEACION CALIFICACIONES PRUEBA
+	create table calificaciones(id integer auto_increment primary key, calificacion integer);
+
+CREACION DE ALUMNOS
+	insert into alumnos(nombre) values(10,'respuesta A','respuesta B','respuesta C','respuesta D','c'); 
+
+creacion de usuarios
+	create table usuarios(id integer auto_increment primary key, nombre varchar(50),password varchar(8),tipo integer);
+	inserccion
+	insert into usuarios(nombre,password,tipo) values('admin','admin',0);
